@@ -3,15 +3,26 @@ from aiogram import Dispatcher
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
+
+
 # import openai
 # from . import settings
 # openai.api_key = settings.OPEN_AI.get('API_KEY')
 
 
+async def tip(message: types.Message):
+    if message.audio:
+        ??????????
+
+
+
 async def start(message: types.Message):
     await message.answer(text='Привет ска')
+
+
 # async def start(message: types.Message):
-#     await message.answer(text=f"{openai.Completion.create(model=settings.OPEN_AI.get('MODEL'), prompt=message.text, temperature=2, max_tokens=4000).get('choices')[0].get('text')}")
+#     await message.answer(text=f"{openai.Completion.create(model=settings.OPEN_AI.get('MODEL'), prompt=message.text,
+#     temperature=2, max_tokens=4000).get('choices')[0].get('text')}")
 
 
 async def new_post(message: types.Message):
