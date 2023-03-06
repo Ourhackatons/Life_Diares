@@ -1,8 +1,8 @@
 from aiogram import executor
 from aiogram.dispatcher import FSMContext
 from aiogram import Bot, Dispatcher
-from bot.settings import TOKEN
-from bot.handlers.clien_handlers import client_register_message_handler
+from .settings import TOKEN
+from .handlers.clien_handlers import client_register_message_handler
 
 
 def _on_startup(dp: Dispatcher):
