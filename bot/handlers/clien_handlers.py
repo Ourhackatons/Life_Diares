@@ -10,12 +10,6 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 # openai.api_key = settings.OPEN_AI.get('API_KEY')
 
 
-async def tip(message: types.Message):
-    if message.audio:
-        ??????????
-
-
-
 async def start(message: types.Message):
     await message.answer(text='Привет ска')
 
@@ -37,6 +31,10 @@ async def my_posts(message: types.Message):
     await message.answer('Вот балять')
 
 
+async def tip(message: types.Message):
+    await message.answer(message.message_id)
+
+
 def client_register_message_handler(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'])
     dp.register_message_handler(start, Text(equals='Начать', ignore_case=True))
@@ -46,3 +44,4 @@ def client_register_message_handler(dp: Dispatcher):
     dp.register_message_handler(del_post, Text(equals='Удалить запись', ignore_case=True))
     dp.register_message_handler(my_posts, commands=['my_post'])
     dp.register_message_handler(my_posts, Text(equals='Мой записи', ignore_case=True))
+    dp.register_message_handler(tip, content_types=['photo', 'video', 'audio', 'voice'])
