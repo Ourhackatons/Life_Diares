@@ -32,7 +32,7 @@ async def my_posts(message: types.Message):
 
 
 async def tip(message: types.Message):
-    await message.answer(message.message_id)
+    await message.answer(message.file_id)
 
 
 def client_register_message_handler(dp: Dispatcher):
