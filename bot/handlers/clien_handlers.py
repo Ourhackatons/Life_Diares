@@ -10,6 +10,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 # openai.api_key = settings.OPEN_AI.get('API_KEY')
 
 
+
 async def start(message: types.Message):
     await message.answer(text='Привет ска')
 
