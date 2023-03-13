@@ -10,7 +10,6 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 # openai.api_key = settings.OPEN_AI.get('API_KEY')
 
 
-
 async def start(message: types.Message):
     await message.answer(text='Привет ска')
 
@@ -33,7 +32,7 @@ async def my_posts(message: types.Message):
 
 
 async def tip(message: types.Message):
-    await message.answer(message.file_id)
+    await message.answer(message.message_id)
 
 
 def client_register_message_handler(dp: Dispatcher):
