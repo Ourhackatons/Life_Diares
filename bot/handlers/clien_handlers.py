@@ -31,8 +31,20 @@ async def my_posts(message: types.Message):
     await message.answer('Вот балять')
 
 
-async def tip(message: types.Message):
-    await message.answer(message.message_id)
+async def photo(message: types.Message):
+    await message.answer(message.photo[0].file_id)
+
+
+async def video(message: types.Message):
+    await message.answer(message.video.file_id)
+
+
+async def audio(message: types.Message):
+    await message.answer(message.audio.file_id)
+
+
+async def voice(message: types.Message):
+    await message.answer(message.voice.file_id)
 
 
 def client_register_message_handler(dp: Dispatcher):
@@ -44,4 +56,7 @@ def client_register_message_handler(dp: Dispatcher):
     dp.register_message_handler(del_post, Text(equals='Удалить запись', ignore_case=True))
     dp.register_message_handler(my_posts, commands=['my_post'])
     dp.register_message_handler(my_posts, Text(equals='Мои записи', ignore_case=True))
-    dp.register_message_handler(tip, content_types=['photo', 'video', 'audio', 'voice'])
+    dp.register_message_handler(photo, content_types=['photo'])
+    dp.register_message_handler(video, content_types=['video'])
+    dp.register_message_handler(audio, content_types=['audio'])
+    dp.register_message_handler(voice, content_types=['voice'])
