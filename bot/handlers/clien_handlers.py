@@ -44,5 +44,5 @@ def client_register_message_handler(dp: Dispatcher):
     dp.register_message_handler(del_post, commands=['del_post'])
     dp.register_message_handler(del_post, Text(equals='Удалить запись', ignore_case=True))
     dp.register_message_handler(my_posts, commands=['my_post'])
-    dp.register_message_handler(my_posts, Text(equals='Мой записи', ignore_case=True))
+    dp.register_message_handler(my_posts, Text(equals='Мои записи', ignore_case=True))
     dp.register_message_handler(tip, content_types=['photo', 'video', 'audio', 'voice'])
